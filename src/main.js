@@ -11,8 +11,8 @@ function translate(query, completion) {
         "Content-Type": "application/json",
         Authorization: "Bearer " + api_key,
     };
-    let prompt = `translate to ${lang.langMap.get(query.detectTo) || query.detectTo
-        }:\n\n${query.text} =>`;
+    let prompt = `summarize ${lang.langMap.get(query.detectTo) || query.detectTo
+        } to summarize:\n\n${query.text} =>`;
     if (query.detectTo === "wyw" || query.detectTo === "yue") {
         prompt = `请翻译成${lang.langMap.get(query.detectTo) || query.detectTo
             }:\n\n${query.text} =>`;
